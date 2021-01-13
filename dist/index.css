@@ -1,0 +1,116 @@
+:root {
+    --primary-color:#000000;
+    --secondary-color: #CF5C5C;
+    --link-color: #ffffff;
+    --overly-color: rgba(208, 93, 93, 0.57);
+    }
+    * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+    body {
+        line-height: 1.6;
+        font-family: 'Quattrocento Sans', sans-serif;
+        font-size: 1.1rem;
+        /* height: 100vh; */
+        margin: 0
+    }
+    .main-container {
+        width: 100%;
+        height: auto;
+    }
+    
+    h1, h2, h3 {
+        line-height: 1.3;
+    }
+    
+     a {
+         text-decoration: none;
+         padding: 20px;
+         color: var(--link-color)
+    
+     }
+     ul {
+         list-style: none;
+     }
+    #navbar .nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        background: var(--primary-color)
+    }
+    .nav li{
+        list-style: none;
+        padding: 2rem;
+    }
+    .nav a{
+        color: var(--link-color);
+        text-decoration: none;
+            }
+    #showcase{
+        background-image: url('./images/homePageImage.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        color: var(--link-color);
+        padding: 0 2rem
+    }
+    #section-a {
+       height: 100vh;
+       margin: 2rem
+    }
+    .container-a img{
+        width: 100%;
+    } 
+    #section-a .container-a{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem
+    }
+    #section-b{
+        height: 100vh;
+    }
+    .container-b img{
+        width: 100%;
+        padding: 5rem 2rem
+    }
+    #section-b .container-b{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+        justify-content: center;
+        align-items: center;
+    }
+    .overlay {
+        background: rgba(208, 93, 93, 0.57);
+        z-index: 1;
+        position:absolute
+    }
+    #section-c{
+        height: 100vh;
+    }
+    #section-c .container-c{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem
+    }
+    .container-c img{
+        width: 100%;
+        padding: 5rem 2rem
+    }
+    footer{
+        height: 50vh;
+        background: var(--primary-color)
+    }
+    footer .location {
+        color:var(--link-color)
+    }
+    .footer-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        padding: 4rem
+    }
