@@ -13,12 +13,13 @@
         line-height: 1.6;
         font-family: 'Quattrocento Sans', sans-serif;
         font-size: 1.1rem;
-        /* height: 100vh; */
-        margin: 0
+        height: 100vh;
+        margin: 0;
+        
     }
     .main-container {
         width: 100%;
-        height: auto;
+        height: 100%;
     }
     
     h1, h2, h3 {
@@ -27,12 +28,32 @@
     
      a {
          text-decoration: none;
-         padding: 20px;
+         padding: 1rem;
          color: var(--link-color)
     
      }
      ul {
          list-style: none;
+         text-align: center;
+     }
+     button{
+        border: 1px solid var(--secondary-color);
+        border-radius: 1rem;
+        background:rgba(208, 93, 93, 0.57);
+        padding: 1rem;
+        margin-top: 2rem;
+        font-size: 1rem;
+        color: var(--link-color);
+        transition: transform 0.2sec
+     }
+     button:hover{
+        background: var(--secondary-color);
+        color: var(--link-color);
+        transform: scale(1.1)
+     }
+     #navbar {
+         position: fixed;
+         width: 100%;
      }
     #navbar .nav{
         display: flex;
@@ -42,23 +63,92 @@
     }
     .nav li{
         list-style: none;
-        padding: 2rem;
+        padding: 1rem;
     }
     .nav a{
         color: var(--link-color);
         text-decoration: none;
-            }
-    #showcase{
+    }
+    .nav a:hover{
+        color: var(--overly-color);
+    }
+    .nav .btn{
+        border: 1px solid var(--secondary-color);
+        border-radius: 10px;
+        background:rgba(208, 93, 93, 0.57);
+        padding: 0.5rem;
+        margin: 0.5rem;
+        width: 150px;
+        height: 50px;
+    }
+    .nav .btn:hover{
+        color:rgba(208, 93, 93, 0.57);
+        background: var(--link-color)
+
+    }
+    .wrapper{
         background-image: url('./images/homePageImage.jpg');
         background-size: cover;
         background-position: center;
         height: 100vh;
         color: var(--link-color);
-        padding: 0 2rem
+        padding: 0 2rem;
     }
+    #showcase {
+        padding-top: 7rem
+    }
+    #showcase h1{
+        color: var(--secondary-color)
+    }
+    #scroll {
+        margin-top: 20rem;
+    }
+    #scroll a{
+        margin-top: 42rem;
+        margin-left: 50%;
+        padding: 0.2rem;
+    }
+
+    #scroll a span{
+        margin-top: 35rem;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 46px;
+        height: 46px;
+        border: 1px solid #fff;
+        border-radius: 100%;
+        box-sizing: border-box;
+      }
+    #scroll a span::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        content: '';
+        width: 16px;
+        height: 16px;
+        margin: -12px 0 0 -8px;
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        box-sizing: border-box;
+      }
+    .arrow a {    
+        z-index: 2;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        transition: opacity .3s;
+      }
+    .arrow a:hover {
+        opacity: .5;
+      }
     #section-a {
        height: 100vh;
-       margin: 2rem
+       margin: 2rem;
+    }
+    #section-a h2{
+        color: var(--secondary-color)
     }
     .container-a img{
         width: 100%;
@@ -66,8 +156,12 @@
     #section-a .container-a{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 2rem
+        grid-gap: 2rem;
     }
+    #section-a .container-a .rooms{
+        padding: 6rem
+    }
+
     #section-b{
         height: 100vh;
     }
@@ -99,8 +193,29 @@
         width: 100%;
         padding: 5rem 2rem
     }
+    #map{
+        height: 300px;
+        width: 400px
+    }
+    .mapboxgl-map{
+        margin-left: 30%
+    }
+    .mapboxgl-canvas{
+      margin-left:1rem;
+      border: 2px solid var(--overly-color);
+      width: 600px;
+      height: 600px;
+    }
+    .marker{
+        background-image: url('./images/clipart1214856.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        padding: 1rem
+    }
     footer{
-        height: 50vh;
+        margin-top:2rem;
         background: var(--primary-color)
     }
     footer .location {
