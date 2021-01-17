@@ -4,17 +4,23 @@
     --link-color: #ffffff;
     --overly-color: rgba(208, 93, 93, 0.57);
     }
+    html{
+        width: 100%
+    }
     * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    }
+    scroll-behavior: smooth;
+}
+
     body {
         line-height: 1.6;
         font-family: 'Quattrocento Sans', sans-serif;
         font-size: 1.1rem;
         height: 100vh;
         margin: 0;
+        width: 100%
         
     }
     .main-container {
@@ -41,7 +47,7 @@
         border-radius: 1rem;
         background:rgba(208, 93, 93, 0.57);
         padding: 1rem;
-        margin-top: 2rem;
+        margin: 2rem;
         font-size: 1rem;
         color: var(--link-color);
         transition: transform 0.2sec
@@ -54,25 +60,31 @@
      #navbar {
          position: fixed;
          width: 100%;
+         z-index: 1;
+         background: var(--primary-color);
+         display: flex;
+         flex-direction: row;
+         justify-content: flex-end;
+
      }
-    #navbar .nav{
+
+    #navbar .nav-links{
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
-        background: var(--primary-color)
     }
-    .nav li{
+    .nav-links li{
         list-style: none;
         padding: 1rem;
     }
-    .nav a{
+    .nav-links a{
         color: var(--link-color);
         text-decoration: none;
     }
-    .nav a:hover{
+    .nav-links a:hover{
         color: var(--overly-color);
     }
-    .nav .btn{
+    .nav-links .btn{
         border: 1px solid var(--secondary-color);
         border-radius: 10px;
         background:rgba(208, 93, 93, 0.57);
@@ -81,11 +93,12 @@
         width: 150px;
         height: 50px;
     }
-    .nav .btn:hover{
+    .nav-links .btn:hover{
         color:rgba(208, 93, 93, 0.57);
         background: var(--link-color)
 
     }
+    
     .wrapper{
         background-image: url('./images/homePageImage.jpg');
         background-size: cover;
@@ -119,6 +132,8 @@
         border: 1px solid #fff;
         border-radius: 100%;
         box-sizing: border-box;
+        
+
       }
     #scroll a span::after {
         position: absolute;
@@ -135,7 +150,6 @@
         box-sizing: border-box;
       }
     .arrow a {    
-        z-index: 2;
         -webkit-transform: translate(0, -50%);
         transform: translate(0, -50%);
         transition: opacity .3s;
@@ -144,7 +158,6 @@
         opacity: .5;
       }
     #section-a {
-       height: 100vh;
        margin: 2rem;
     }
     #section-a h2{
@@ -152,11 +165,14 @@
     }
     .container-a img{
         width: 100%;
+        height: auto;
     } 
     #section-a .container-a{
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 2rem;
+        width: 100%;
+        height: 100%;
     }
     #section-a .container-a .rooms{
         padding: 6rem
@@ -178,12 +194,9 @@
     }
     .overlay {
         background: rgba(208, 93, 93, 0.57);
-        z-index: 1;
         position:absolute
     }
-    #section-c{
-        height: 100vh;
-    }
+
     #section-c .container-c{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -191,14 +204,20 @@
     }
     .container-c img{
         width: 100%;
-        padding: 5rem 2rem
+        padding: 2rem
+    }
+    .container-c .rating{
+       justify-self: center;
+        padding: 2rem
     }
     #map{
         height: 300px;
         width: 400px
     }
     .mapboxgl-map{
-        margin-left: 30%
+        margin-left: 5rem;
+        z-index:-1;
+        
     }
     .mapboxgl-canvas{
       margin-left:1rem;
@@ -214,8 +233,49 @@
         cursor: pointer;
         padding: 1rem
     }
+    .map-wrapper {
+        height: 30rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+        padding: 2rem;
+       align-items: center;
+       justify-content: center;
+        box-shadow: 0 0 15px 0 rgba(208, 93, 93, 0.57);
+    }
+    .map-wrapper .location{
+        justify-self: center;
+        padding: 2rem;
+        text-align: center;
+    }
+    .map-wrapper .location span{
+       display: flex;
+       flex-direction:row;
+       align-items: center;
+       padding-left: 1rem;
+       justify-content: center;
+    }
+    .map-wrapper .location .icons{
+    padding: 1rem 0;
+         
+    }
+    .map-wrapper .location span p{
+       padding-left: 1.5rem
+     }
+    .map-wrapper .location span a{
+        color: var(--primary-color);
+        /* background:rgba(208, 93, 93, 0.57); */
+        border: 1px solid #ebecf0;
+        border-radius: 50%; 
+        margin: 1rem;
+        padding: 0.5rem;
+        background:#ebecf0
+      }
+    .map-wrapper .location span a:hover{
+        color: var(--link-color);
+        background: var(--overly-color)
+      }
     footer{
-        margin-top:2rem;
         background: var(--primary-color)
     }
     footer .location {
@@ -229,3 +289,50 @@
         align-items: center;
         padding: 4rem
     }
+    #footer .to-top{
+        position: fixed;
+        top: 300px;
+        right: 0;
+        margin-right: 1rem;
+        padding: 1rem;
+        border: 1px solid var(--primary-color);
+        border-radius: 50%;
+    }
+    #footer .to-top:hover{
+        background: var(--overly-color);
+        color: var(--link-color)
+    }
+    #footer .show-to-top{
+    display: none;
+    }
+    .services{
+        padding: 1rem;
+        height: 20rem;
+        box-shadow: 0 0 15px 0 rgba(208, 93, 93, 0.57);
+        background:rgba(208, 93, 93, 0.57)
+    }
+    .services-wrapper{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding:1rem;
+
+    }
+    .services-wrapper span{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem
+    }
+    .services-wrapper i{
+        color: var(--link-color);
+        padding: 2rem
+    }
+    #weather {
+
+        color: var(--link-color);
+        text-align: center
+    }
+
