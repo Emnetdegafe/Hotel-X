@@ -35,3 +35,34 @@ geojson.features.forEach(function(marker) {
       .setLngLat(marker.geometry.coordinates)
       .addTo(map);
   });
+  // scroll to top
+  $(document).ready(function () {
+    $(window).scroll(function () {
+        if ($(document).scrollTop() < 150) {
+            $(".to-top").addClass("show-to-top")
+        } else {
+            $(".to-top").removeClass("show-to-top")
+        }
+    })
+})
+// weather map
+const url = 'https://api.openweathermap.org/data/2.5/weather?q=Amsterdam&appid=b7dca5a7c303e1e4c99dfd106d6f0ea5'
+function currentWeather(){
+  fetch(url)
+  .then(response => response.json())
+  .then(data => drawWeather(data))
+  
+  .catch()
+}
+window.onload = () => {
+  currentWeather()
+}
+function drawWeather( d ) {
+  var celcius = Math.round(parseFloat(d.main.temp)-273.15);
+  var fahrenheit = Math.round(((parseFloat(d.main.temp)-273.15)*1.8)+32); 
+
+	
+	document.getElementById('description').innerHTML = d.weather[0].description;
+  document.getElementById('temp').innerHTML = celcius +' ' + '&degc';
+
+}

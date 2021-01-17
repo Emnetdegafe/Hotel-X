@@ -9,19 +9,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-      
+    <script src="https://kit.fontawesome.com/a2052947fc.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="main-container">
         <nav id="navbar">
-            <ul class="nav">
+            <ul class="nav-links">
                 <li><a href="#Hotel"> Hotel</a></li>
                 <li><a href="#section-a">Rooms</a></li>
                 <li><a href="#sevices">Services</a></li>
-                <li><a href="contact">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
                 <li class='btn'><a href="#Book-a-room">Book Now</a></li>
             </ul>
+
         </nav>
         <div class="wrapper">
             <header id="showcase">
@@ -29,10 +30,10 @@
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
             </header>
             <section id="scroll" class="arrow">
-                    <a href="#section-a">
-                        <span></span> Scroll</a>
-                    </section>
-            </div>
+                <a href="#section-a">
+                    <span></span> Scroll</a>
+            </section>
+        </div>
         <section id="section-a">
             <h2>Our Rooms</h2>
             <div class="container-a">
@@ -42,9 +43,10 @@
                         impedit aliquid repudiandae, blanditiis quisquam a dicta ducimus consequatur quod obcaecati,
                         architecto
                         nam quaerat harum officia ipsam.</p>
-                        <button>Book now</button>
+                    <button>See Detail</button>
+                    <button>Book now</button>
                 </div>
-                <img src="./images/room 1.jpg" alt="">
+                <img src="./images/room3.jpg" alt="">
             </div>
         </section>
         <section id="section-b">
@@ -58,7 +60,9 @@
                             nam perferendis blanditiis possimus nisi. Consequuntur, mollitia ad. Fuga, facilis voluptas
                             at
                             libero numquam debitis cum quisquam animi.</p>
+                        <button>See Detail</button>
                         <button>Book now</button>
+
                     </div>
                 </div>
             </div>
@@ -68,21 +72,93 @@
                 <img src="./images/bar.jpg" alt="">
                 <div class="rating">
                     <h3>What our guests say about us</h3>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae quaerat possimus
+                    <p>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae quaerat possimus
                         repellendus, similique amet culpa magnam eum autem delectus. Ullam dolor hic temporibus
-                        quibusdam voluptates id, error dolore! Culpa, placeat?</p>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae quaerat possimus
+                        quibusdam voluptates id, error dolore! Culpa, placeat?"</p><br />
+                    <span class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+
+
+                    </span>
+                    <p>"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae quaerat possimus
                         repellendus, similique amet culpa magnam eum autem delectus. Ullam dolor hic temporibus
-                        quibusdam voluptates id, error dolore! Culpa, placeat?</p>
+                        quibusdam voluptates id, error dolore! Culpa, placeat?"</p>
+                    <span class="rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="services">
+                <h3>services/facilities</h3>
+                <div class="services-wrapper">
+                    <span>
+                        <i class="fas fa-shower fa-4x"></i>
+                        <p>shower</p>
+                    </span>
+                    <span>
+                        <i class="fas fa-bath fa-4x"></i>
+                        <p>bath</p>
+                    </span>
+                    <span>
+                        <i class="fas fa-spa fa-4x"></i>
+                        <p>spa</p>
+                    </span>
+                    <span>
+                        <i class="fas fa-shuttle-van fa-4x"></i>
+                        <p> shuttle</p>
+                    </span>
+                    <span>
+                        <i class="fas fa-wheelchair fa-4x"></i>
+                        <p>wheelchair friendly</p>
+                    </span>
+                    <span>
+                        <i class="fas fa-wifi fa-4x"></i>
+                        <p> Free wifi</p>
+                    </span>
                 </div>
             </div>
         </section>
-        <div id="map" class="map">
-        </div>
+        <section id="contact" class="map-wrapper">
+            <div class="location">
+                <p>Hotel X</p>
+                <p> wiboutestraat 123</p>
+                <p>Amsterdam, Netherlands</p>
+                <span>
 
+                    <i class="fas fa-phone-volume"> </i>
+                    <p>+3123423467</p>
+                </span>
+                <span>
+
+                    <i class="fas fa-envelope"></i>
+                    <p>info@hotelX.nl</p>
+                </span>
+                <span class="icons">
+                    <a href="http://facebook.com">
+                        <i class="fab fa-facebook fa-2x"></i> </a>
+                    <a href="http://instagram.com">
+                        <i class="fa fa-instagram fa-2x"></i>
+                    </a>
+                    <a href="http://youtube.com">
+                        <i class="fa fa-youtube fa-2x"></i>
+                    </a>
+                </span>
+            </div>
+            <div id="map" class="map">
+            </div>
+        </section>
         <footer id="footer">
-            <div class="footer-container">
+            <i class="to-top fa fa-chevron-up" onClick="window.scrollTo(0, 0)"></i>
 
+            <div class="footer-container">
                 <ul>
                     <li><a href="#Hotel">Hotel</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -91,27 +167,17 @@
                     <li><a href="#rating">Ratings</a></li>
                     <li><a href="#Book now">Book Now</a></li>
                 </ul>
-                <span class="icons">
-                    <a href="http://facebook.com">
-                        <i class="fa fa-facebook fa-2x"></i>
-                    </a>
-                    <a href="http://instagram.com">
-                        <i class="fa fa-instagram fa-2x"></i>
-                    </a>
-                    <a href="http://youtube.com">
-                        <i class="fa fa-youtube fa-2x"></i>
-                    </a>
-                </span>
-                <div class="location">
-                    <p>location</p>
-                    <p>Hotel X</p>
-                    <p>wiboutestraat 123</p>
-                    <p>Amsterdam, Netherlands</p>
+
+                <div id="weather">
+                    <h2>Current Weather</h2>
+                    <div id='description'></div>
+                    <h1 id="temp"></h1>
                 </div>
             </div>
         </footer>
     </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css' rel='stylesheet' />
 <script src="main.js"></script>
