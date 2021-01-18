@@ -4,9 +4,7 @@
     --link-color: #ffffff;
     --overly-color: rgba(208, 93, 93, 0.57);
     }
-    html{
-        width: 100%
-    }
+
     * {
     box-sizing: border-box;
     margin: 0;
@@ -18,15 +16,11 @@
         line-height: 1.6;
         font-family: 'Quattrocento Sans', sans-serif;
         font-size: 1.1rem;
-        height: 100vh;
-        margin: 0;
-        width: 100%
-        
     }
-    .main-container {
+    /* .main-container {
         width: 100%;
         height: 100%;
-    }
+    } */
     
     h1, h2, h3 {
         line-height: 1.3;
@@ -57,7 +51,7 @@
         color: var(--link-color);
         transform: scale(1.1)
      }
-     #navbar {
+     nav{
          position: fixed;
          width: 100%;
          z-index: 1;
@@ -65,10 +59,22 @@
          display: flex;
          flex-direction: row;
          justify-content: flex-end;
+         min-height: 8vh;
 
      }
+     .burger {
+        display: none;
+        margin: 2rem
+    }
+    .burger div{
+        width: 25px;
+        height: 3px;
+        background-color: var(--link-color);
+        margin: 5px;
+        transition: all 0.5s ease
+     }
 
-    #navbar .nav-links{
+    .nav-links{
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
@@ -152,10 +158,10 @@
     .arrow a {    
         -webkit-transform: translate(0, -50%);
         transform: translate(0, -50%);
-        transition: opacity .3s;
+        transition: opacity 0.3s;
       }
     .arrow a:hover {
-        opacity: .5;
+        opacity: 0.5;
       }
     #section-a {
        margin: 2rem;
@@ -210,6 +216,31 @@
        justify-self: center;
         padding: 2rem
     }
+    .services{
+        padding: 1rem;
+        min-height: 20rem;
+        box-shadow: 0 0 15px 0 rgba(208, 93, 93, 0.57);
+        background:rgba(208, 93, 93, 0.57)
+    }
+    .services-wrapper{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding:1rem;
+
+    }
+    .services-wrapper span{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem
+    }
+    .services-wrapper i{
+        color: var(--link-color);
+        padding: 2rem
+    }
     #map{
         height: 300px;
         width: 400px
@@ -221,7 +252,6 @@
     }
     .mapboxgl-canvas{
       margin-left:1rem;
-      border: 2px solid var(--overly-color);
       width: 600px;
       height: 600px;
     }
@@ -234,7 +264,7 @@
         padding: 1rem
     }
     .map-wrapper {
-        height: 30rem;
+        min-height: 30rem;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 1rem;
@@ -283,7 +313,7 @@
     }
     .footer-container{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: 1rem;
         justify-content: center;
         align-items: center;
@@ -305,34 +335,151 @@
     #footer .show-to-top{
     display: none;
     }
-    .services{
-        padding: 1rem;
-        height: 20rem;
-        box-shadow: 0 0 15px 0 rgba(208, 93, 93, 0.57);
-        background:rgba(208, 93, 93, 0.57)
-    }
-    .services-wrapper{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        padding:1rem;
 
-    }
-    .services-wrapper span{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 2rem
-    }
-    .services-wrapper i{
-        color: var(--link-color);
-        padding: 2rem
-    }
     #weather {
 
         color: var(--link-color);
         text-align: center
     }
+    /* mobile screen*/
+    @media screen and (max-width: 768px) {
+    html{
+        overflow-x:hidden
+        }
+    body {
+        overflow-x: hidden
+        }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 30vh;
+        top: 7vh;
+        background: var(--primary-color);
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 70%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+        overflow-x: hidden
+  
+    } 
+    .burger{
+        display: block;
+        margin-right: 15rem;
+    }
 
+    .nav-active{
+        transform: translateX(0)   
+    }
+    .toggle .line1{
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2{
+        opacity: 0;
+    }
+    .toggle .line3{
+        transform: rotate(45deg) translate(-5px, -6px);
+
+    }
+    .wrapper{
+        height: 70vh;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+    }
+    #showcase {
+        width: 25rem;
+        height: 10rem;
+        margin-top: 7rem;
+        padding: 2rem;
+
+    }
+    #scroll {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 7rem;
+        align-items: center;
+    } 
+    #scroll a{
+        margin-top: 1rem;
+        margin-left: 8rem;
+    }
+    #scroll a span{
+        margin-top: 3rem;
+        left: 10%
+    } 
+    #section-a .container-a{
+        grid-template-rows: 300px 1fr;
+        grid-template-columns: 1fr;
+        width: 25rem;
+        margin:1rem;
+    }
+    #section-a .container-a .rooms{
+       padding: 1rem
+    }
+    #section-b{
+        height: 60vh;
+    }
+    #section-b .container-b{
+        grid-template-rows: 300px 1fr;
+        grid-template-columns: 1fr;
+        width: 30rem;
+        margin:1rem;
+        padding: 1rem
+    }
+    .overlay{
+        width: 80%
+    }
+    #section-c .container-c{
+        grid-template-rows: 300px 1fr;
+        grid-template-columns: 1fr;
+        width: 30rem;
+    }
+    .services-wrapper{
+        align-items: center;
+        width: 30rem;
+        flex-wrap: wrap
+        
+    }
+    .services-wrapper span{
+        flex: 1 0 20%;
+
+    }
+    .services-wrapper i{
+        font-size: 2rem;
+    }
+    .map-wrapper{
+        grid-template-rows: 300px 1fr;
+        grid-template-columns: 1fr;
+        width: 30rem;
+    }
+    .mapboxgl-map{
+        margin:1rem;
+        z-index:-1;
+        
+    }
+    #footer{
+        padding: 1rem;
+        width:30rem
+    }
+    .footer-container{
+        padding: 0.5rem;
+        justify-content: flex-start;
+    }
+    .footer-container ul{
+       text-align: start;
+    }
+    #footer .to-top{
+        position: relative;
+        top: 1rem;
+        left: 25rem;
+        margin-right: 1rem;
+        padding: 1rem;
+        color: white;
+        border: 1px solid var(--link-color);
+        border-radius: 50%;
+    }
+}
