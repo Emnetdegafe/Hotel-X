@@ -1,6 +1,4 @@
-// TO MAKE THE MAP APPEAR YOU MUST
-// ADD YOUR ACCESS TOKEN FROM
-// https://account.mapbox.com
+// map
 mapboxgl.accessToken = 'pk.eyJ1IjoiZW1uZXQtZGV2IiwiYSI6ImNrazA4aDFyOTBlenMyd2xpYmcyOGhxaXQifQ.ynAJu11M0M_XlQ9qBi0z3Q';
 var map = new mapboxgl.Map({
 container: 'map',
@@ -35,16 +33,7 @@ geojson.features.forEach(function(marker) {
       .setLngLat(marker.geometry.coordinates)
       .addTo(map);
   });
-  // scroll to top
-  $(document).ready(function () {
-    $(window).scroll(function () {
-        if ($(document).scrollTop() < 150) {
-            $(".to-top").addClass("show-to-top")
-        } else {
-            $(".to-top").removeClass("show-to-top")
-        }
-    })
-})
+
 // weather map
 const url = 'https://api.openweathermap.org/data/2.5/weather?q=Amsterdam&appid=b7dca5a7c303e1e4c99dfd106d6f0ea5'
 function currentWeather(){
@@ -76,3 +65,13 @@ burger.addEventListener('click', () => {
 })
 }
 navSlider()
+  // scroll to top
+  $(document).ready(function () {
+    $(window).scroll(function () {
+        if ($(document).scrollTop() < 150) {
+            $(".to-top").addClass("show-to-top")
+        } else {
+            $(".to-top").removeClass("show-to-top")
+        }
+    })
+})
