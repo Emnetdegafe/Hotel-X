@@ -4,9 +4,7 @@
     --link-color: #ffffff;
     --overly-color: rgba(208, 93, 93, 0.57);
     }
-    html{
-        width: 100%
-    }
+
     * {
     box-sizing: border-box;
     margin: 0;
@@ -18,14 +16,11 @@
         line-height: 1.6;
         font-family: 'Quattrocento Sans', sans-serif;
         font-size: 1.1rem;
-        height: 100vh;
-        margin: 0;
-        width: 100%
-        
+        height: 100hv
     }
     .main-container {
         width: 100%;
-        height: 100%;
+        height: auto;
     }
     
     h1, h2, h3 {
@@ -57,18 +52,40 @@
         color: var(--link-color);
         transform: scale(1.1)
      }
-     #navbar {
+     nav{
          position: fixed;
          width: 100%;
          z-index: 1;
          background: var(--primary-color);
-         display: flex;
-         flex-direction: row;
-         justify-content: flex-end;
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         justify-content: center;
+         align-items: center;
+         min-height: 7vh;
+         padding: 1rem
 
      }
+     #navbar .logo{
+         color: var(--secondary-color);
+         align-self: start;
+         padding: 1rem;
+         margin: 1rem
+     }
+     .burger {
+        display: none;
+        margin: 1rem
+        
 
-    #navbar .nav-links{
+    }
+    .burger div{
+        width: 25px;
+        height: 3px;
+        background-color: var(--link-color);
+        margin: 5px;
+        transition: all 0.5s ease
+     }
+
+    .nav-links{
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
@@ -106,33 +123,35 @@
         height: 100vh;
         color: var(--link-color);
         padding: 0 2rem;
+        text-align: center;
     }
     #showcase {
-        padding-top: 7rem
+        padding-top: 15rem;
+        z-index: 1;
     }
     #showcase h1{
         color: var(--secondary-color)
     }
     #scroll {
-        margin-top: 20rem;
+        margin-top: 13rem;
+        font-size: 2rem;
+        align-self: center;
     }
     #scroll a{
         margin-top: 42rem;
-        margin-left: 50%;
         padding: 0.2rem;
     }
 
     #scroll a span{
-        margin-top: 35rem;
+        margin-top: 37rem;
         position: absolute;
         top: 0;
-        left: 50%;
+        left: 48%;
         width: 46px;
         height: 46px;
         border: 1px solid #fff;
         border-radius: 100%;
         box-sizing: border-box;
-        
 
       }
     #scroll a span::after {
@@ -152,10 +171,10 @@
     .arrow a {    
         -webkit-transform: translate(0, -50%);
         transform: translate(0, -50%);
-        transition: opacity .3s;
+        transition: opacity 0.3s;
       }
     .arrow a:hover {
-        opacity: .5;
+        opacity: 0.5;
       }
     #section-a {
        margin: 2rem;
@@ -170,6 +189,7 @@
     #section-a .container-a{
         display: grid;
         grid-template-columns: 1fr 1fr;
+        justify-content: center;
         grid-gap: 2rem;
         width: 100%;
         height: 100%;
@@ -178,12 +198,15 @@
         padding: 6rem
     }
 
-    #section-b{
+    #section-b {
+        position: relative;
         height: 100vh;
+        width: 100%
+        
     }
     .container-b img{
         width: 100%;
-        padding: 5rem 2rem
+       height: auto
     }
     #section-b .container-b{
         display: grid;
@@ -191,16 +214,31 @@
         grid-gap: 2rem;
         justify-content: center;
         align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 1rem
     }
     .overlay {
+        position:absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
         background: rgba(208, 93, 93, 0.57);
-        position:absolute
     }
-
+    #section-c{
+        height: 100vh;
+        width: 100%
+}
     #section-c .container-c{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: 2rem
+        grid-gap: 2rem;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 1rem
     }
     .container-c img{
         width: 100%;
@@ -208,6 +246,31 @@
     }
     .container-c .rating{
        justify-self: center;
+        padding: 2rem
+    }
+    #services{
+        padding: 1rem;
+        min-height: 20rem;
+        box-shadow: 0 0 15px 0 rgba(208, 93, 93, 0.57);
+        background:rgba(208, 93, 93, 0.57)
+    }
+    .services-wrapper{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding:1rem;
+
+    }
+    .services-wrapper span{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2rem
+    }
+    .services-wrapper i{
+        color: var(--link-color);
         padding: 2rem
     }
     #map{
@@ -221,7 +284,6 @@
     }
     .mapboxgl-canvas{
       margin-left:1rem;
-      border: 2px solid var(--overly-color);
       width: 600px;
       height: 600px;
     }
@@ -234,14 +296,13 @@
         padding: 1rem
     }
     .map-wrapper {
-        height: 30rem;
+        min-height: 30rem;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 1rem;
         padding: 2rem;
        align-items: center;
        justify-content: center;
-        box-shadow: 0 0 15px 0 rgba(208, 93, 93, 0.57);
     }
     .map-wrapper .location{
         justify-self: center;
@@ -283,7 +344,7 @@
     }
     .footer-container{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         grid-gap: 1rem;
         justify-content: center;
         align-items: center;
@@ -305,34 +366,221 @@
     #footer .show-to-top{
     display: none;
     }
-    .services{
-        padding: 1rem;
-        height: 20rem;
-        box-shadow: 0 0 15px 0 rgba(208, 93, 93, 0.57);
-        background:rgba(208, 93, 93, 0.57)
-    }
-    .services-wrapper{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        padding:1rem;
 
-    }
-    .services-wrapper span{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 2rem
-    }
-    .services-wrapper i{
-        color: var(--link-color);
-        padding: 2rem
-    }
     #weather {
 
         color: var(--link-color);
         text-align: center
     }
+    @media (min-width: 768px) and (max-width: 1280px) {
+        body{
+            overflow-x: hidden
+        }
+        .main-container{
+            justify-content: center;
+        }
 
+        .wrapper{
+            height: 70vh;
+            width: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content:center;
+        }
+        #showcase {
+            width: 30rem;
+            height: 10rem;
+            margin-top: 10rem;
+            padding: 1rem;
+            
+        }
+        #scroll {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content:center;
+            margin-top: 7rem;
+
+        } 
+        #scroll a{
+            margin-top: 1rem;
+            margin: 0;
+        align-self: center; 
+        } 
+        #scroll a span{
+            margin-top: 3rem;
+            align-self: center;
+            left: 20%
+            
+        } 
+        #section-a .container-a .rooms{
+            padding: 1rem 0
+        }
+        #section-b{
+            height: 50vh
+        }
+        #section-c{
+            height: auto
+        }
+        
+      }
+    /* mobile screen*/
+    @media screen and (max-width: 767px) {
+    html{
+        overflow-x:hidden
+        }
+    body {
+        overflow-x: hidden
+        }
+    .main-container{
+        align-items: center;
+        width:100%
+    }
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 30vh;
+        top: 7vh;
+        background: var(--primary-color);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+        overflow-x: hidden
+    } 
+    .burger{
+        display: block;
+
+    }
+
+    .nav-active{
+        transform: translateX(0)   
+    }
+    .toggle .line1{
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2{
+        opacity: 0;
+    }
+    .toggle .line3{
+        transform: rotate(45deg) translate(-5px, -6px);
+
+    }
+    .wrapper{
+        height: 70vh;
+        width: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+    }
+    #showcase {
+        width: 25rem;
+        height: 10rem;
+        margin-top: 7rem;
+        padding: 2rem;
+    }
+    #scroll {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10rem;
+        align-items: center;
+    } 
+    #scroll a{
+        margin-top: 1rem;
+        margin-left: 8rem;
+    }
+    #scroll a span{
+        margin-top: 3rem;
+        left: 10%
+    }
+
+    #section-a .container-a{
+        grid-template-rows: 1fr;
+        grid-template-columns: 1fr;
+        padding: 1rem
+    }
+    #section-a .container-a .rooms{
+       padding: 1rem
+    }
+    #section-b{
+        height: 80vh;
+        width: auto;
+        align-items: center;
+    }
+    #section-b .container-b{
+        grid-template-rows: 1fr;
+        grid-template-columns: none;
+        padding: 1rem;
+        margin: 1rem;
+        width: auto;
+    }
+    #section-b .container-b .rooms{
+        padding: 1rem
+     }
+    .container-b img{
+       height: auto;
+       align-self: center;
+    }
+    #section-c{
+        height:auto;
+        align-items: center;
+    }
+    #section-c .container-c{
+        grid-template-rows: 1fr;
+        grid-template-columns: none;
+        padding: 1rem;
+        width: auto;
+        margin: 1rem
+    }
+    #services h3{
+        padding: 1rem
+    }
+    .services-wrapper{
+        align-items: center;
+        width: auto;
+        flex-wrap: wrap;
+        margin: 1rem
+        
+    }
+    .services-wrapper span{
+        flex: 1 0 20%;
+
+    }
+    .services-wrapper i{
+        font-size: 2rem;
+    }
+    .map-wrapper{
+        grid-template-rows: 1fr;
+        grid-template-columns: none;
+        width: auto;
+        box-shadow: none;
+    }
+    .mapboxgl-map{
+        padding: 0.5rem;
+    }
+    #footer{
+        padding: 1rem;
+        width: auto
+    }
+    .footer-container{
+        padding: 0.5rem;
+        justify-content: center;
+        grid-template-columns: none;
+    }
+    .footer-container ul{
+       text-align: center;
+    }
+    #footer .to-top{
+        position: relative;
+        top: 1rem;
+        left: 35rem;
+        margin-right: 1rem;
+        padding: 1rem;
+        color: white;
+        border: 1px solid var(--link-color);
+        border-radius: 50%;
+    }
+
+}
